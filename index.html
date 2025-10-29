@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Removed class="dark" -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIEN Mobility - Drive the Future</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Google Fonts (Inter 700, Roboto 400) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Updated fonts to Inter (Headings) and Roboto (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Custom Tailwind Configuration & Styles -->
+    <script>
+        tailwind.config = {
+            // Removed darkMode config
+            theme: {
+                extend: {
+                    colors: {
+                        // New Color Palette
+                        'brand-primary': '#0B2545', // Deep Navy
+                        'brand-accent1': '#00C2A8', // Teal Mint
+                        'brand-accent2': '#3DD3FF', // Cyan Light
+                        'neutral-dark': '#111827', // Almost Black
+                        'neutral-gray': '#F3F6F9', // Off-white bg
+                        'brand-danger': '#FF6B6B',
+                        'white': '#FFFFFF',
+                    },
+                    fontFamily: {
+                        // Updated fonts
+                        heading: ['"Inter"', 'sans-serif'], // Heading font
+                        body: ['"Roboto"', 'sans-serif'],  // Body font
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for motion and layout -->
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Apply base styles */
+        body {
+            background-color: #F3F6F9; /* neutral-gray */
+            color: #111827; /* neutral-dark */
+            font-family: "Roboto", sans-serif; /* body font */
+        }
+
+        /* Removed glowing hover effects */
+
+        /* Fade-in sections */
+        .fade-in-section {
+            opacity: 0;
+            transition: opacity 0.8s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Custom keyframes for fade in */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Helper for infographic arrows */
+        .infographic-step:not(:last-child)::after {
+            content: '→';
+            color: #00C2A8; /* brand-accent1 */
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0 0.5rem;
+            display: none; /* Hide on mobile */
+        }
+
+        @media (min-width: 768px) {
+            .infographic-step:not(:last-child)::after {
+                display: inline-block; /* Show on desktop */
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral-gray font-body text-neutral-dark">
+
+    <!-- Wrapper -->
+    <div class="overflow-x-hidden">
+
+        <!-- Header -->
+        <header class="py-6 px-6 md:px-12 w-full absolute top-0 z-10">
+            <nav class="flex justify-between items-center max-w-7xl mx-auto">
+                <div class="text-2xl font-heading font-bold text-brand-primary"> <!-- Updated text color -->
+                    RIEN X
+                </div>
+                <!-- Navigation links can go here if needed -->
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center justify-center text-center px-6 pt-24 pb-12">
+            <div class="max-w-4xl mx-auto">
+                <!-- Updated font size to H1 spec (48px) -->
+                <h1 class="font-heading text-5xl font-bold text-brand-primary"> <!-- Updated text color -->
+                    Drive the Future —
+                    <span class="text-brand-accent1">RIEN Mobility.</span> <!-- Updated accent color -->
+                </h1>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <main class="py-16 md:py-24 space-y-24 md:space-y-32">
+
+            <!-- Screenshots Section -->
+            <section id="screenshots" class="fade-in-section container mx-auto px-6 max-w-6xl">
+                <!-- Updated font size to H2 spec (34px-ish) and color -->
+                <h2 class="text-4xl font-heading font-bold text-center mb-16 text-brand-primary">
+                    Smart, Contactless Access
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start"> <!-- Changed to items-start -->
+                    
+                    <!-- Screenshot 1: App -->
+                    <div class="flex flex-col items-center text-center">
+                        <img src="https://placehold.co/350x700/F3F6F9/0B2545?text=App+Interface" 
+                             alt="RIEN Mobility App Screenshot"
+                             onerror="this.src='https://placehold.co/350x700/F3F6F9/111827?text=App+Interface'"
+                             class="rounded-3xl border border-gray-200 shadow-xl w-full max-w-xs"> <!-- Updated shadow/border -->
+                        <!-- Updated font size to H3 spec (24px) and color -->
+                        <h3 class="mt-6 font-heading text-2xl font-bold text-brand-primary">Smart App</h3>
+                        <!-- Updated font size to Body spec (16px) and color -->
+                        <p class="text-neutral-dark/80 mt-2 text-base">All-in-one vehicle control.</p>
+                    </div>
+
+                    <!-- Screenshot 2: Rental Flow -->
+                    <div class="flex flex-col items-center text-center">
+                        <img src="https://placehold.co/350x700/F3F6F9/00C2A8?text=Rental+Flow" 
+                             alt="RIEN Mobility Rental Flow"
+                             onerror="this.src='https://placehold.co/350x700/F3F6F9/111827?text=Rental+Flow'"
+                             class="rounded-3xl border border-gray-200 shadow-xl w-full max-w-xs"> <!-- Updated shadow/border -->
+                        <h3 class="mt-6 font-heading text-2xl font-bold text-brand-primary">Rental Flow</h3>
+                        <p class="text-neutral-dark/80 mt-2 text-base">Seamless booking process.</p>
+                    </div>
+
+                    <!-- Screenshot 3: Smart Key -->
+                    <div class="flex flex-col items-center text-center">
+                        <img src="https://placehold.co/350x700/F3F6F9/0B2545?text=Digital+Key" 
+                             alt="RIEN Mobility Smart Key"
+                             onerror="this.src='https://placehold.co/350x700/F3F6F9/111827?text=Digital+Key'"
+                             class="rounded-3xl border border-gray-200 shadow-xl w-full max-w-xs"> <!-- Updated shadow/border -->
+                        <h3 class="mt-6 font-heading text-2xl font-bold text-brand-primary">Smart Key</h3>
+                        <p class="text-neutral-dark/80 mt-2 text-base">Your phone is the key.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Infographic Section -->
+            <section id="infographic" class="fade-in-section container mx-auto px-6 max-w-5xl">
+                <h2 class="text-4xl font-heading font-bold text-center mb-16 text-brand-primary">
+                    How It Works
+                </h2>
+                <div class="flex flex-col md:flex-row items-center justify-center text-center flex-wrap">
+                    <div class="infographic-step flex flex-col md:flex-row items-center p-4">
+                        <!-- Updated font size to H3 spec (24px) -->
+                        <span class="text-2xl font-heading font-bold text-brand-primary">Booking</span>
+                    </div>
+                    <div class="infographic-step flex flex-col md:flex-row items-center p-4">
+                        <span class="text-2xl font-heading font-bold text-brand-accent1">Payment</span> <!-- Updated accent color -->
+                    </div>
+                    <div class="infographic-step flex flex-col md:flex-row items-center p-4">
+                        <span class="text-2xl font-heading font-bold text-brand-primary">Unlock</span>
+                    </div>
+                    <div class="infographic-step flex flex-col md:flex-row items-center p-4">
+                        <span class="text-2xl font-heading font-bold text-brand-accent1">Drive</span> <!-- Updated accent color -->
+                    </div>
+                    <div class="infographic-step flex flex-col md:flex-row items-center p-4">
+                        <span class="text-2xl font-heading font-bold text-brand-primary">Return</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Paragraph Section -->
+            <section id="about" class="fade-in-section container mx-auto px-6 max-w-3xl">
+                <!-- Updated to a clean white card style -->
+                <div class="text-center bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100">
+                    <!-- Updated font size to 18px (slightly larger body) and color -->
+                    <p class="text-lg text-neutral-dark leading-relaxed">
+                        “RIEN Mobility is the first connected vehicle ecosystem by RIEN X. We make smart, contactless vehicle access available for modern users.”
+                    </p>
+                    <!-- Updated font size and color -->
+                    <span class="inline-block mt-6 font-heading text-base font-bold text-brand-primary">RIEN X</span>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section id="cta" class="fade-in-section container mx-auto px-6 max-w-3xl text-center">
+                <h2 class="text-4xl font-heading font-bold text-center mb-12 text-brand-primary">
+                    Get Started
+                </h2>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <!-- Disabled Button (Updated style) -->
+                    <button 
+                        class="w-full sm:w-auto px-8 py-4 font-heading font-bold text-base text-gray-500 bg-gray-200 rounded-lg cursor-not-allowed"
+                        disabled>
+                        Download App (Coming Soon)
+                    </button>
+                    
+                    <!-- Primary CTA Button (Updated style) -->
+                    <!-- Pointing to about section as placeholder -->
+                    <a href="#about"
+                       class="w-full sm:w-auto inline-block px-8 py-4 font-heading font-bold text-base text-white bg-brand-accent1 rounded-lg transition-all duration-300 hover:bg-opacity-80 shadow-lg hover:shadow-xl"> <!-- Updated classes -->
+                        Learn About IoT Integration
+                    </a>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-12 mt-24 border-t border-gray-200"> <!-- Updated border color -->
+            <div class="container mx-auto px-6 text-center">
+                <!-- Updated font size to Small spec (14px) and color -->
+                <p class="text-sm text-neutral-dark/70">&copy; 2025 RIEN Mobility. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript for Fade-in Animation (Unchanged) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const sections = document.querySelectorAll('.fade-in-section');
+
+            // Fallback for browsers that don't support IntersectionObserver
+            if (!('IntersectionObserver' in window)) {
+                sections.forEach(section => {
+                    section.classList.add('is-visible');
+                });
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once it's visible
+                    }
+                });
+            }, {
+                root: null, // relative to the viewport
+                threshold: 0.1 // 10% of the item must be visible
+            });
+
+            // Observe each section
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
+
