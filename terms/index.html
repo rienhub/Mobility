@@ -1,6 +1,37 @@
-<iframe
-  src="https://docs.google.com/document/d/e/2PACX-1vSaNu1FdN4kCdk_O0xrGxm3WHPqm6PYmd5FrO35gkYjIPCUigvxu0qAZzbBi5b2Y7QJxRTR6ZqFhNcq/pub"
-  width="100%"
-  height="1200"
-  style="border:none; border-radius:8px;">
-</iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RIEN Mobility Agreement</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f7f9fc;
+      font-family: Arial, sans-serif;
+    }
+    iframe {
+      width: 100%;
+      border: none;
+      min-height: 100vh; /* at least full screen height */
+    }
+  </style>
+</head>
+<body>
+  <iframe 
+    id="rienDoc"
+    src="https://docs.google.com/document/d/1NAmmrZCiwZY_QqByH1dIMUh7O5dZymIIbVAPFz6tg5w/view">
+  </iframe>
+
+  <script>
+    // Try to stretch iframe based on window height
+    const iframe = document.getElementById('rienDoc');
+    function resizeIframe() {
+      iframe.style.height = window.innerHeight + 'px';
+    }
+    window.addEventListener('resize', resizeIframe);
+    resizeIframe();
+  </script>
+</body>
+</html>
